@@ -1,4 +1,4 @@
-package DniCalculator;
+package level01.DniCalculator;
 
 public class DniCalculator {
     private final String LETTERS = "TRWAGMYFPDXBNJZSQVHLCKE";
