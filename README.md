@@ -12,7 +12,6 @@ The repository is designed to practice the core concepts of automated testing in
 - expressive assertions with AssertJ
 - parameterized tests
 - exception testing
-- test-driven development (TDD)
 - separation of business logic from input/output to make code testable
 
 The exercises are organized progressively to build a solid testing foundation using modern Java tools and good development practices.
@@ -93,26 +92,6 @@ Covered cases include:
 - map key validation
 - exception assertions
 - empty `Optional` validation
-
----
-
-### Level 3 - TDD
-
-This level is focused on building a calculator using the TDD cycle:
-
-- Red
-- Green
-- Refactor
-
-Expected calculator behavior:
-- initial total is `0`
-- `add(x)` increases the total
-- `subtract(x)` decreases the total
-- `multiply(x)` updates the total correctly
-- `divide(x)` updates the total correctly
-- division by zero throws `ArithmeticException`
-- `reset()` restores the total to `0`
-- `getTotal()` returns the current total
 
 ---
 
