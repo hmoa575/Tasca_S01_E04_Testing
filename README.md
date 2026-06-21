@@ -1,46 +1,141 @@
-# Tasca S1.04 – Testing with JUnit 5 and AssertJ
+# Tasca S1.04 - Testing
 
-Git clone from https://github.com/hmoa575/Tasca_S01_E04_Testing
+This project contains the exercises for Sprint 1 - Task S1.04 focused on Java testing with JUnit 5, AssertJ, and TDD.
 
-**Description**:  
-This project contains a set of exercises to practise unit testing in Java using **JUnit 5** and **AssertJ**. It covers essential testing techniques such as parameterized tests, exception handling, and fluent assertions for collections, optionals, and maps. The goal is to write clean, maintainable tests that verify the correctness of Java code.
+---
+
+## Overview
+
+The repository is designed to practice the core concepts of automated testing in Java:
+
+- unit testing with JUnit 5
+- expressive assertions with AssertJ
+- parameterized tests
+- exception testing
+- test-driven development (TDD)
+- separation of business logic from input/output to make code testable
+
+The exercises are organized progressively to build a solid testing foundation using modern Java tools and good development practices.
+
+---
+
+## Technologies
+
+- Java
+- Maven
+- JUnit 5
+- AssertJ
+
+---
 
 ## Project Structure
-└───Tasca_S01_E04_Testing
-    └───src
-        ├───main
-        │   └───java
-        │       ├───level01
-        │       │   ├───controlexception
-        │       │   ├───DniCalculator
-        │       │   └───library
-        │       └───level02
-        └───test
-            └───java
-                ├───level01
-                │   ├───controlexceptionTest
-                │   ├───DniCalculatorTest
-                │   └───libraryTest
-                └───level02
 
-  ## Compilation and Execution from the Command Line
+```text
+Tasca_S01_E04_Testing
+└── src
+    ├── main
+    │   └── java
+    │       ├── level01
+    │       │   ├── controlexception
+    │       │   ├── dnicalculator
+    │       │   └── library
+    │       └── level02
+    └── test
+        └── java
+            ├── level01
+            │   ├── controlexceptiontest
+            │   ├── dnicalculatortest
+            │   └── librarytest
+            └── level02
+```
 
-### 1. Compile all source and test files
+---
+
+## Exercises
+
+### Level 1 - JUnit
+
+#### Exercise 1 - Library tests
+Implementation and unit tests for a class that manages a book collection.
+
+Main features covered:
+- add books
+- get all books preserving insertion order
+- get a book by position
+- insert a book at a specific position
+- remove a book by title
+- return an alphabetically sorted copy of the collection
+- prevent duplicated titles
+
+#### Exercise 2 - Parameterized DNI test
+Implementation and parameterized tests for a DNI letter calculator.
+
+Main features covered:
+- calculate the correct DNI letter from a number
+- validate multiple input cases using parameterized tests
+- handle invalid values such as negative or out-of-range numbers
+
+#### Exercise 3 - Exception control
+Implementation and tests for code that throws `ArrayIndexOutOfBoundsException` under the expected conditions.
+
+---
+
+### Level 2 - AssertJ
+
+This level includes tests that demonstrate fluent assertions with AssertJ.
+
+Covered cases include:
+- integer equality and inequality
+- object reference equality and difference
+- identical integer arrays
+- list content and insertion order
+- presence or absence of elements in collections
+- map key validation
+- exception assertions
+- empty `Optional` validation
+
+---
+
+### Level 3 - TDD
+
+This level is focused on building a calculator using the TDD cycle:
+
+- Red
+- Green
+- Refactor
+
+Expected calculator behavior:
+- initial total is `0`
+- `add(x)` increases the total
+- `subtract(x)` decreases the total
+- `multiply(x)` updates the total correctly
+- `divide(x)` updates the total correctly
+- division by zero throws `ArithmeticException`
+- `reset()` restores the total to `0`
+- `getTotal()` returns the current total
+
+---
+
+## How to Run
+
+### Run all tests
 
 ```bash
-javac -d out -cp "lib/*" src/main/java/**/*.java src/test/java/**/*.java
-
-2. Run tests (Maven)
-
 mvn clean test
+```
 
+### Run a specific test class
 
-Level 1 - Junit
+#### Level 1
+
+```bash
 mvn -Dtest=LibraryTest test
 mvn -Dtest=DniCalculatorTest test
+```
 
-Level 2 - AssertJ
+#### Level 2
 
+```bash
 mvn -Dtest=IntegerAssertionTest test
 mvn -Dtest=ReferenceAssertionTest test
 mvn -Dtest=ArrayAssertionTest test
@@ -48,9 +143,12 @@ mvn -Dtest=ListOrderAssertionTest test
 mvn -Dtest=MapAssertionTest test
 mvn -Dtest=OptionalAssertionTest test
 mvn -Dtest=ArrayAccessorTest test
+```
 
-Notes
-All tests are written in English.
-The code follows good practices: defensive copying, proper exception handling, and clear naming.
-AssertJ provides fluent, readable assertions that improve test maintainability.
+---
 
+## Notes
+
+- All code and tests are written in English.
+- The project uses Maven to manage dependencies and test execution.
+- The focus of the repository is testing practice, code quality, and clean structure.
