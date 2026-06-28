@@ -28,16 +28,16 @@ public class DniCalculatorTest {
 
     private static Stream<Arguments> idAndLetter() {
         return Stream.of(
-                Arguments.of("00020001", 'A'),
-                Arguments.of("00030001", 'B'),
-                Arguments.of("00060001", 'C'),
-                Arguments.of("00080001", 'D'),
-                Arguments.of("00410321", 'E'),
-                Arguments.of("54200123", 'F'),
-                Arguments.of("54289101", 'G'),
-                Arguments.of("54289741", 'H'),
-                Arguments.of("54289852", 'K'),
-                Arguments.of("54289654", 'L'));
+                Arguments.of("00020001", 'Z'),
+                Arguments.of("00030001", 'D'),
+                Arguments.of("00060001", 'V'),
+                Arguments.of("00080001", 'F'),
+                Arguments.of("00410321", 'R'),
+                Arguments.of("54200123", 'W'),
+                Arguments.of("54289101", 'Q'),
+                Arguments.of("54289741", 'N'),
+                Arguments.of("54289852", 'P'),
+                Arguments.of("54289654", 'V'));
     }
 @Test
 void idLengthTest(){
